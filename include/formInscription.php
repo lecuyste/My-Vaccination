@@ -1,14 +1,15 @@
 <?php
-if (!isset($nom)) $login = "";
 if (!isset($mail)) $mail = "";
+if (!isset($nom)) $nom = "";
+if (!isset($prenom)) $prenom = "";
 ?>
 <form method="post" action="index.php?page=inscription">
     <div>
-        <label for="login">Nom: </label>
+        <label for="nom">Nom: </label>
         <input type="text" id="nom" name="nom" value="<?=$nom?>"/>
     </div>
     <div>
-        <label for="login">Prénom: </label>
+        <label for="prenom">Prénom: </label>
         <input type="text" id="prenom" name="prenom" value="<?=$prenom?>"/>
     </div>
     <div>
@@ -20,7 +21,7 @@ if (!isset($mail)) $mail = "";
         <input type="password" id="mdp" name="mdp" />
     </div>
     <div>
-        <label for="mdp">Confirmation mot de passe&nbsp;: </label>
+        <label for="conf_mdp">Confirmation mot de passe&nbsp;: </label>
         <input type="password" id="conf_mdp" name="conf_mdp"/>
     </div>
     <div>

@@ -2,7 +2,7 @@
 <header>
                 <?php
                 if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
-                    //echo "<li><a href=\"index.php?page=profil\">Mon profil</a></li>";
+                    echo "<li><a href=\"index.php?page=renseignement\">Mes Renseignements</a></li>";
                     echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
                 } else {
                     echo "<li><a href=\"index.php?page=inscription\">Inscription</a></li>";

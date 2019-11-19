@@ -35,11 +35,11 @@ if (isset($_POST['inscr'])) {
         echo $message;
         include "formInscription.php";
     } else {
-        $sql = "SELECT COUNT(*) FROM inscription WHERE mail='". $mail . "'";
+        $sql = "SELECT COUNT(*) FROM users WHERE mail='". $mail . "'";
         $nombreOccurences = $pdo->query($sql)->fetchColumn();
         if ($nombreOccurences == 0) {
             $mdp = password_hash($mdp, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO inscription
+            $sql = "INSERT INTO users
                 (nom, prenom, mail, password)
                 VALUES ('" . $nom . "', '" . $prenom . "', '" . $mail . "', '" . $mdp . "')";
             $query = $pdo->prepare($sql);

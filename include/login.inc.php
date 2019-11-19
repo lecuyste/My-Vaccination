@@ -39,7 +39,7 @@ if (isset($_POST['log'])) {
     } else {
         echo "Test matching Log/mdp</br>";
 
-        $getDatas = "SELECT * FROM inscription WHERE mail ='" . $logMail . "'";
+        $getDatas = "SELECT * FROM users WHERE mail ='" . $logMail . "'";
         $result = $pdo->query($getDatas)->fetch(PDO::FETCH_ASSOC);
         $_SESSION['$logMail'] = $result['mail'];
         $hash = $result['password'];

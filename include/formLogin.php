@@ -6,7 +6,7 @@ if (!isset($logMail)){
 
 <form method="post" action="index.php?page=login">
     <div>
-        <label for="pseudo">Votre adresse mail: </label>
+        <label for="mail">Votre adresse mail: </label>
         <input type="text" id="logMail" name="logMail" value="<?=$logMail?>" />
     </div>
     <div>

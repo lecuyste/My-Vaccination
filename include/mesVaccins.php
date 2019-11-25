@@ -17,6 +17,8 @@ include ('pdo.php');
 
 
 
+  //recuperer liste des vaccins
+
 ?>
 
     <h1>Mes vaccins</h1>
@@ -26,7 +28,9 @@ include ('pdo.php');
 <table>
 
     <tr>
+        //liste des vaccins recup de la bdd
         <th> Nom </th>
+        //maladies d'apres nom du vacc
         <th> Maladie </th>
         <th> Date de vaccination </th>
     </tr>
@@ -47,7 +51,7 @@ include ('pdo.php');
 
 
 
-
+// prochains vaccins
 
     <h2>Mes prochains vaccins</h2>
 
@@ -59,7 +63,9 @@ include ('pdo.php');
         <th> Date de rappel </th>
     </tr>
     <tr>
+        // nom du vaccin recup dans la bdd
         <td></td>
+        // nom de la maladie recup dans la bdd d'apres le nom du vacc
         <td></td>
         <td></td>
     </tr>

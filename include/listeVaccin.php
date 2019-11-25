@@ -38,7 +38,7 @@
 
 
         }
-        echo "Rouge = obligatoire.";
+        echo "Rouge = obligatoire en France.";
         $reponse->closeCursor();
     }
     catch(Exception $e)

@@ -6,6 +6,9 @@ include_once "./function/debug.php";
 include_once "./include/pdo.php";
 include_once "./function/display_title.php";
 include_once "./function/test_input.php";
+include_once "./function/textValide.php";
+include_once "./function/isLoged.php";
+include_once "./function/isAdmin.php";
 include_once "./include/html.php";
 include_once "./include/header.php";
 

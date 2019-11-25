@@ -19,10 +19,8 @@ if (isset($_POST['log'])) {
         $mdp = test_input($_POST["mdp"]);
     }
 
-    if (mb_strlen($logMail) < 2 && ctype_alpha($logMail)) {
-        array_push($erreur, "Veuillez saisir votre adresse mail.");
-        debug($mdp);
-    }
+    if (!filter_var($logMail, FILTER_VALIDATE_EMAIL))
+        array_push($erreurs, "Veuillez saisir une adresse mail valide.");
     if (mb_strlen($mdp) < 6) {
         array_push($erreur, "Votre mot de passe contient au minimum 6 caractères");
     }
@@ -43,12 +41,18 @@ if (isset($_POST['log'])) {
         $result = $pdo->query($getDatas)->fetch(PDO::FETCH_ASSOC);
         $_SESSION['$logMail'] = $result['mail'];
         $hash = $result['password'];
+        $ip = $_SERVER['REMOTE_ADDR'];
 
         if (password_verify($mdp, $hash)) {
-            $_SESSION['login'] = 1;
-            //debug($_SESSION['login']);
+            $_SESSION['login'] = array(
+                    'id' => $result['idUser'],
+                    'email' => $result['mail'],
+                    'role' => $result['role'],
+                    'ip' => $ip);
             $redirection = "<script>document.location.href='http://localhost/BCI1/myVaccination'</script>";
-            echo $redirection;
+            if (isLoged()){
+                echo $redirection;
+            }
         } else {
             echo "L'adresse mail et le mot de passe ne correspondent pas";
         }

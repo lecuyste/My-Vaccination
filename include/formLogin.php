@@ -7,7 +7,9 @@ if (!isset($logMail)){
 <form method="post" action="index.php?page=login">
     <div>
         <label for="mail">Votre adresse mail: </label>
-        <input type="text" id="logMail" name="logMail" value="<?=$logMail?>" />
+        <input type="text" id="logMail" name="logMail" value="<?php if (!empty($logMail)) {
+            echo $logMail;
+        }?>" />
     </div>
     <div>
         <label for="mdp">Mot de passe: </label>

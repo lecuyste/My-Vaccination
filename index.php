@@ -2,6 +2,7 @@
 session_start();
 
 date_default_timezone_set('Europe/Paris');
+setlocale(LC_TIME, "fr_FR");
 include_once "./function/debug.php";
 include_once "./include/pdo.php";
 include_once "./function/display_title.php";

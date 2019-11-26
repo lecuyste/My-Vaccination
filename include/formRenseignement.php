@@ -40,7 +40,7 @@ $profil = $query->fetch();
     </div>
     <div>
         <p>Séléctionné votre groupe sanguin : </p>
-        <div>
+        <div id="btn_radio">
             <input type="radio" id="aPlus" name="sang" value="A+" <?php
             if (!empty($profil['sang']) && $profil['sang'] == 'A+'){
                 echo "checked";

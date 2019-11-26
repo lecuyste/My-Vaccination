@@ -1,3 +1,6 @@
 label{
     display: block;
 }
+#btn_radio label{
+    display: inline;
+}

@@ -49,9 +49,8 @@ if (isset($_POST['log'])) {
                     'email' => $result['mail'],
                     'role' => $result['role'],
                     'ip' => $ip);
-            $redirection = "<script>document.location.href='http://localhost/BCI1/myVaccination'</script>";
             if (isLoged()){
-                echo $redirection;
+                header('Location: index.php');
             }
         } else {
             echo "L'adresse mail et le mot de passe ne correspondent pas";

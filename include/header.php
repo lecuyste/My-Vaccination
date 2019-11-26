@@ -13,7 +13,7 @@
                         echo "<li><a href=\"index.php?page=renseignement\">Modifier mes Renseignements</a></li>";
                     }
                     echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
-                    echo "<h1> Vous êtes Admin ! </h1>";
+                    echo "<h1> Vous êtes un Admin " . $profil['prenom'] . " ! </h1>";
                 } elseif (isLoged()){
                     $id_user = $_SESSION['login']['id'];
                     $sql = "SELECT * FROM users where idUSER = $id_user";
@@ -26,7 +26,7 @@
                         echo "<li><a href=\"index.php?page=renseignement\">Modifier mes Renseignements</a></li>";
                     }
                     echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
-                    echo "<h1> Vous êtes utilisateur ! </h1>";
+                    echo "<h1> Vous êtes un utilisateur " . $profil['prenom'] . " ! </h1>";
                 }
                 else {
                     echo "<li><a href=\"index.php?page=inscription\">Inscription</a></li>";

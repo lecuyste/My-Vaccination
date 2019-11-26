@@ -10,8 +10,10 @@ include_once "./function/test_input.php";
 include_once "./function/textValide.php";
 include_once "./function/isLoged.php";
 include_once "./function/isAdmin.php";
+
 include_once "./include/html.php";
 include_once "./include/header.php";
+
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];

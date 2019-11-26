@@ -39,6 +39,8 @@ if (isset($_POST['submitted'])) {
             $query->bindValue(':sang', $sang, PDO::PARAM_STR);
             $query->execute();
     }
+    header('Location: index.php');
 } else {
     require_once "formRenseignement.php";
+
 }

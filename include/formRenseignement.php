@@ -41,29 +41,62 @@ $profil = $query->fetch();
     <div>
         <p>Séléctionné votre groupe sanguin : </p>
         <div>
-            <input type="radio" id="aPlus" name="sang" value="A+"/>
+            <input type="radio" id="aPlus" name="sang" value="A+" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'A+'){
+                echo "checked";
+            }
+            ?>/>
             <label for="aPlus"> A+ </label>
 
-            <input type="radio" id="aMoins" name="sang" value="A-"/>
+            <input type="radio" id="aMoins" name="sang" value="A-" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'A-'){
+                echo "checked";
+            }
+            ?>/>
             <label for="aMoins"> A- </label>
 
-            <input type="radio" id="bPlus" name="sang" value="B+"/>
+            <input type="radio" id="bPlus" name="sang" value="B+" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'B+'){
+                echo "checked";
+            }
+            ?>/>
             <label for="bPlus"> B+ </label>
 
-            <input type="radio" id="bMoins" name="sang" value="B-"/>
+            <input type="radio" id="bMoins" name="sang" value="B-" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'B-'){
+                echo "checked";
+            }
+            ?>/>
             <label for="bMoins"> B- </label>
 
-            <input type="radio" id="abPlus" name="sang" value="AB+"/>
+            <input type="radio" id="abPlus" name="sang" value="AB+" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'AB+'){
+                echo "checked";
+            }
+            ?>/>
             <label for="abPlus"> AB+ </label>
 
-            <input type="radio" id="abMoins" name="sang" value="AB-"/>
+            <input type="radio" id="abMoins" name="sang" value="AB-" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'AB-'){
+                echo "checked";
+            }
+            ?>/>
             <label for="abMoins"> AB- </label>
 
-            <input type="radio" id="oPlus" name="sang" value="O+"/>
+            <input type="radio" id="oPlus" name="sang" value="O+" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'O+'){
+                echo "checked";
+            }
+            ?>/>
             <label for="oPlus"> O+ </label>
 
-            <input type="radio" id="oMoins" name="sang" value="O-"/>
+            <input type="radio" id="oMoins" name="sang" value="O-" <?php
+            if (!empty($profil['sang']) && $profil['sang'] == 'O-'){
+                echo "checked";
+            }
+            ?>/>
             <label for="oMoins"> O- </label>
+
         </div>
     </div>
     <div>

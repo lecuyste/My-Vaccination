@@ -13,6 +13,8 @@
             font-size: 30px;
             margin: auto;
             margin-top: 50px;
+            padding-bottom: 90px;
+            text-align: center;
         }
 
         .container {

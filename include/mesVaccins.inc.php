@@ -5,42 +5,89 @@ include ('pdo.php');
 
 
 
+  //recuperer liste des vaccins selon id_user
 
-  /*  $sql = "SELECT * FROM users INNER JOIN vaccins ON users.id_user = vaccins.id_vaccin";
+$sql = "SELECT * FROM vaccins";
+$query = $pdo->prepare($sql);
+$query->execute();
+
+$vaccins = $query->fetchAll();
+
+
+$sql = "SELECT idUser FROM users";
+$query = $pdo->prepare($sql);
+$query->execute();
+
+$users = $query->fetch();
+
+?>
+<?php
+if (!empty($_POST['submitted'])) {
+
+    $id_user = $_SESSION['login']['id'];
+    $id_vaccin = $_POST['nomVaccin'];
+    $dateInjection = $_POST['dateInjection'];
+
+
+   // $nomVaccin = $_POST['nomVaccin'];
+
+  //  $sql = "SELECT id_vaccin FROM vaccins WHERE nom=$nomVaccin" ;
+  //  $query = $pdo->prepare($sql);
+   // $query->execute();
+
+  //  $id_vaccins = $query -> fetch();
+
+
+
+
+    $sql = "INSERT INTO user_vaccin VALUES ('', :id_user, :id_vaccin, :dateInjection, NOW())";
     $query = $pdo->prepare($sql);
-    $query->fetchAll();
+    $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $query->bindValue(':id_vaccin', $id_vaccin, PDO::PARAM_INT);
+    $query->bindValue(':dateInjection', $dateInjection, PDO::PARAM_STR);
 
-   $req = $query->execute();
-
-   print_r($req['vaccins.id_vaccin']);
-*/
-
+    $query->execute();
 
 
-  //recuperer liste des vaccins
 
+}
 ?>
 
     <h1>Mes vaccins</h1>
 
     <h2>Vaccins effectués</h2>
 
-<table>
 
-    <tr>
-        //liste des vaccins recup de la bdd
-        <th> Nom </th>
-        //maladies d'apres nom du vacc
-        <th> Maladie </th>
-        <th> Date de vaccination </th>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+<form method="post" action="index.php?page=mesVaccins">
+<label for="selectNomVaccin"></label>
 
-</table>
+    <div class="vaccin">
+        <table border="1" id="tableauVaccinEffectue">
+            <tr>
+                <th> Nom Vaccin </th>
+                <th> Date d'injection</th>
+            </tr>
+            <tr>
+      <td> <select name ="nomVaccin" id="nomVaccin">
+              <?php foreach ($vaccins as $vaccin){
+                  echo '<option  value = "'.$vaccin['id_vaccin'].'" >'.$vaccin['nom'].'</option>';
+
+                  if(!empty($_POST['nom'])){
+
+                      if($_POST['nom'] == $vaccin){
+                          echo 'selected ="selected"';}
+                  } } ?>
+        </select>  </td>
+
+                <td><input type="date"  name="dateInjection" id="dateInjection"></td>
+                <td><input type="submit" name="submitted"></td>
+            </tr>
+        </table>
+
+
+    </div>
+
+</form>
 
 
 
@@ -51,7 +98,9 @@ include ('pdo.php');
 
 
 
-// prochains vaccins
+
+
+
 
     <h2>Mes prochains vaccins</h2>
 
@@ -60,12 +109,11 @@ include ('pdo.php');
     <tr>
         <th> Nom </th>
         <th> Maladie </th>
-        <th> Date de rappel </th>
     </tr>
     <tr>
-        // nom du vaccin recup dans la bdd
+
         <td></td>
-        // nom de la maladie recup dans la bdd d'apres le nom du vacc
+
         <td></td>
         <td></td>
     </tr>
@@ -168,4 +216,5 @@ include ('pdo.php');
     <li> Zona</li>
     1 (seule) dose : la vaccination est recommandée chez les adultes âgés de 65 à 74 ans révolus, y compris chez les sujets ayant déjà présenté un ou plusieurs épisodes de zona.
 </ul>
+
 

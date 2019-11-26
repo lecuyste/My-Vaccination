@@ -25,6 +25,7 @@
                     } else {
                         echo "<li><a href=\"index.php?page=renseignement\">Modifier mes Renseignements</a></li>";
                     }
+                    echo '<li><a href="index.php?page=mesVaccins">Mes vaccins</a></li>';
                     echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
                     echo "<h1> Vous êtes un utilisateur " . $profil['prenom'] . " ! </h1>";
                 }

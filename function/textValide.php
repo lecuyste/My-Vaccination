@@ -3,15 +3,16 @@ function textValide($err, $var, $key, $min, $max, $empty = true)
 {
     if (!empty($var)) {
         if (mb_strlen($var) < $min) {
-            $err[$key] = 'Minimum ' . $min . ' caractères pour le nom';
+            array_push($err, "Minimum ". $min . " caractères.");
         } elseif (mb_strlen($var) > $max) {
-            $err[$key] = 'Maximum ' . $max . ' caractères pour le nom';
+            array_push($err, "Maximum ". $max . " caractères.");
+
         } elseif (!(ctype_alpha($key))){
-            $err[$key] = 'Veuillez rentrer des caractères alphabétiques';
+            array_push($err, "Veuillez entrer des caractères alphabétiques");
         }
     } else {
         if ($empty) {
-            $err[$key] = 'Veuillez rentrer votre ' . $key;
+            array_push($err, "Veuillez rentrer votre " . $key);
         }
     }
     return $err;

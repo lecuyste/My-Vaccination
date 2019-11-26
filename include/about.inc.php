@@ -1,6 +1,4 @@
-<h2> Blablabla </h2>
 <?php
-
 if (isLoged()){
     $id_user = $_SESSION['login']['id'];
     $sql = "SELECT * FROM users where idUSER = $id_user";
@@ -49,4 +47,6 @@ if (isLoged()){
         } else {
             echo "Champ non renseigné";
         }?></p>
-<?php }
+<?php } else {
+    echo "<h2>Ceci est la page d'accueil quand vous n'êtes pas logged</h2>";
+}

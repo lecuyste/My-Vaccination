@@ -1,5 +1,5 @@
-<h1 class="p-3  d-flex">Connexion</h1>
 <?php
+echo "<h1 class=\"p-3  d-flex\">Connexion</h1>";
 if (isset($_POST['log'])) {
     if (isset($_POST['logMail'])) {
         $logMail = $_POST['logMail'];

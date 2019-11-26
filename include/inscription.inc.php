@@ -1,5 +1,6 @@
-<h1>Inscription</h1>
+
 <?php
+echo "<h1>Inscription</h1>";
 if (isset($_POST['inscr'])) {
     $nom = isset($_POST['nom']) ? $_POST['nom'] : "";
     $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : "";

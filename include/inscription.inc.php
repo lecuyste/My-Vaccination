@@ -14,10 +14,8 @@ if (isset($_POST['inscr'])) {
         $mdp = test_input($_POST["mdp"]);
         $conf_mdp = test_input($_POST["conf_mdp"]);
     }
-    if (!(mb_strlen($nom) >= 2 && ctype_alpha($nom)))
-        array_push($erreurs, "Veuillez saisir votre nom.");
-    if (!(mb_strlen($prenom) >= 2 && ctype_alpha($prenom)))
-        array_push($erreurs, "Veuillez saisir votre prénom.");
+    $erreurs = textValide($erreurs, $nom, 'nom', 2, 100);
+    $erreurs = textValide($erreurs, $prenom, 'prenom', 2, 100);
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL))
         array_push($erreurs, "Veuillez saisir une adresse mail valide.");
     if (mb_strlen($mdp) < 6)
@@ -38,16 +36,13 @@ if (isset($_POST['inscr'])) {
         $sql = "SELECT COUNT(*) FROM users WHERE mail='". $mail . "'";
         $nombreOccurences = $pdo->query($sql)->fetchColumn();
         if ($nombreOccurences == 0) {
-            $mdp = password_hash($mdp, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users
-                (nom, prenom, mail, password)
-                VALUES ('" . $nom . "', '" . $prenom . "', '" . $mail . "', '" . $mdp . "')";
+            $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO users (nom, prenom, mail, password, role, createdAt) VALUES ( :nom, :prenom, :mail, :password, 1, NOW())";
             $query = $pdo->prepare($sql);
-            $query->bindValue('index_inscription', PDO::PARAM_STR);
-            $query->bindValue('nom', $nom, PDO::PARAM_STR);
-            $query->bindValue('prenom', $prenom, PDO::PARAM_STR);
-            $query->bindValue('password', $mdp, PDO::PARAM_STR);
-            $query->bindValue('mail', $mail, PDO::PARAM_STR);
+            $query->bindValue(':nom', ucfirst($nom), PDO::PARAM_STR);
+            $query->bindValue(':prenom', ucfirst($prenom), PDO::PARAM_STR);
+            $query->bindValue(':mail', $mail, PDO::PARAM_STR);
+            $query->bindValue(':password', $mdpHash, PDO::PARAM_STR);
             $query->execute();
         }
         else {

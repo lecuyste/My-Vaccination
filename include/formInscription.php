@@ -6,15 +6,21 @@ if (!isset($prenom)) $prenom = "";
 <form method="post" action="index.php?page=inscription">
     <div>
         <label for="nom">Nom: </label>
-        <input type="text" id="nom" name="nom" value="<?=$nom?>"/>
+        <input type="text" id="nom" name="nom" value="<?php if (!empty($nom)) {
+            echo $nom;
+        }?>"/>
     </div>
     <div>
         <label for="prenom">Prénom: </label>
-        <input type="text" id="prenom" name="prenom" value="<?=$prenom?>"/>
+        <input type="text" id="prenom" name="prenom" value="<?php if (!empty($prenom)) {
+            echo $prenom;
+        }?>"/>
     </div>
     <div>
         <label for="mail">Mail&nbsp;: </label>
-        <input type="text" id="mail" name="mail" value="<?=$mail?>"/>
+        <input type="text" id="mail" name="mail" value="<?php if (!empty($mail)) {
+            echo $mail;
+        }?>"/>
     </div>
     <div>
         <label for="mdp">Mot de passe : </label>

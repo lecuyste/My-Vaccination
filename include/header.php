@@ -1,5 +1,5 @@
-<body>
-<header>
+<body class="master">
+<header class="entete">
                 <?php
                 // Si admin
                 if (isAdmin()) {
@@ -8,13 +8,27 @@
                     $query = $pdo->prepare($sql);
                     $query->execute();
                     $profil = $query->fetch();
-                    if (empty($profil['modifiedAt'])){
-                        echo "<li><a href=\"index.php?page=renseignement\">Ajouter mes Renseignements</a></li>";
-                    } else {
-                        echo "<li><a href=\"index.php?page=renseignement\">Modifier mes Renseignements</a></li>";
-                    }
-                    echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
-                    echo "<h1> Vous êtes un Admin " . $profil['prenom'] . " ! </h1>";
+                    ?>
+    <link href="./assets/css/styleAdmin.css" rel="stylesheet">
+    <div id="header">
+        <img src="assets/img/logo.png">
+
+    </div>
+
+    <div id="sidemenu">
+        <ul>
+            <li><a href="index.php?page=userAdmin" > Table des utilisateurs </a></li>
+                <li><a href="index.php?page=vaccinsAdmin" > Table des vaccins </a></li>
+            <li><a href="index.php?page=jointureAdmin" > Table des jointures </a></li>
+            <li><a href="index.php?page=contactAdmin" > Table des messages reçus</a></li>
+            <li><a href="index.php?page=logout" > Logout </a></li>
+
+        </ul>
+    </div>
+
+    <div id="data">
+
+        <?php
                 }
                 //Si utilisateur
                 elseif (isLoged()){
@@ -23,20 +37,48 @@
                     $query = $pdo->prepare($sql);
                     $query->execute();
                     $profil = $query->fetch();
-                    if (empty($profil['modifiedAt'])){
-                        echo "<li><a href=\"index.php?page=renseignement\">Ajouter mes Renseignements</a></li>";
-                    } else {
-                        echo "<li><a href=\"index.php?page=renseignement\">Modifier mes Renseignements</a></li>";
-                    }
-                    echo '<li><a href="index.php?page=mesVaccins">Mes vaccins</a></li>';
-                    echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
-                    echo "<h1> Vous êtes un utilisateur " . $profil['prenom'] . " ! </h1>";
+                    ?>
+                    <link href="./assets/css/style.css" rel="stylesheet">
+                    <div class="wrap">
+        <img class="vaccin" src="assets/img/logo.png" alt="">
+        <nav>
+            <ul class="titre">
+                <?php
+                echo "<li><a href=\"index.php?page=about\">Mon profil</a></li>";
+                if (empty($profil['modifiedAt'])){
+                    echo "<li><a href=\"index.php?page=renseignement\">Ajouter mes Renseignements</a></li>";
+                } else {
+                    echo "<li><a href=\"index.php?page=renseignement\">Modifier mes Renseignements</a></li>";
+                }
+                echo "<li><a href=\"index.php?page=mesVaccins\">Mes vaccins</a></li>";
+                ?> </ul>
+            <ul class="log"> <?php
+                echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
+                ?>
+            </ul>
+        </nav>
+    </div><?php
                 }
                 //Si pas logged
-                else {
-                    echo "<li><a href=\"index.php?page=inscription\">Inscription</a></li>";
-                    echo "<li><a href=\"index.php?page=login\">Connexion</a></li>";
-                    echo "<li><a href=\"index.php?page=contact\">Contact</a></li>";
+                else { ?>
+                    <link href="./assets/css/style.css" rel="stylesheet">
+                    <div class="wrap">
+
+        <img class="vaccin" src="assets/img/logo.png" alt="">
+          <nav>
+            <ul class="titre">
+              <li><a href="index.php">Accueil</a></li>
+              <li><a href="#">Qui sommes nous ?</a></li>
+              <li><a href="index.php?page=listeVaccin">Les vaccins</a></li>
+              <li><a href="index.php?page=vaccinsVoyage">Je part en voyage</a></li>
+            </ul>
+            <ul class="log">
+              <li><a href="index.php?page=login">Connexion</a></li>
+              <li><a href="index.php?page=inscription">Inscription</a></li>
+            </ul>
+          </nav>
+      </div>
+<?php
                     if (isset($_POST['inscr'])) {
                         $mail = isset($_POST['mail']) ? $_POST['mail'] : "";
                         $sql = "SELECT COUNT(*) FROM inscription WHERE mail='" . $mail . "'";

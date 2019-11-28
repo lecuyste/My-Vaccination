@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Mentions légales</title>
-</head>
-<body>
-
-
+<div class="triche">
 <h1>Mentions légales</h1>
 <br>
 <h2>Avertissement</h2>
@@ -44,6 +36,5 @@
     For juridique
     La politique rédactionnelle du site est en conformité avec les lois et usages professionnels de la France. </p>
 
+</div>
 
-</body>
-</html>

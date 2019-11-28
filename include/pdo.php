@@ -1,6 +1,6 @@
 <?php
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=carnet_vaccination',
+    $pdo = new PDO('mysql:host=localhost;dbname=my_vaccination',
         'root',
         '',
         array(

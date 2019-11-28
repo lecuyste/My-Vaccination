@@ -35,8 +35,8 @@ if (!empty($_POST['submitted'])) {
 }
 ?>
 <div class="triche">
-    <h1>Mes vaccins</h1>
 
+    <h1>Mes vaccins</h1>
     <h2> Ajouter un vaccin </h2>
     <form method="post" action="index.php?page=mesVaccins">
         <label for="selectNomVaccin"></label>
@@ -78,7 +78,7 @@ if (!empty($_POST['submitted'])) {
     foreach ($id_join as $id_joins) {
         //echo $id_joins['id_vaccin'] . '<br>';
         $id_j = $id_joins['id_vaccin'];
-        $sql = "SELECT * FROM vaccins WHERE id = $id_j";
+        $sql = "SELECT * FROM vaccins WHERE id_vaccin = $id_j";
         $query = $pdo->prepare($sql);
         $query->execute();
         $nom_vac = $query->fetchAll();

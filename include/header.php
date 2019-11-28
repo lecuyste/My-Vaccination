@@ -22,6 +22,25 @@
             <li><a href="index.php?page=jointureAdmin" > Table des jointures </a></li>
             <li><a href="index.php?page=contactAdmin" > Table des messages reçus</a></li>
             <li><a href="index.php?page=logout" > Logout </a></li>
+            <?php
+
+            $pageAdmin = $_GET['page'];
+            if ($pageAdmin == "userAdmin"){
+                echo "<li><a href=\"index.php?page=ajoutUserAdmin\" > Ajouter un utilisateur </a></li>";
+                echo "<li><a href=\"#\" > Modifier un utilisateur </a></li>";
+                echo "<li><a href=\"#\" > Supprimer un utilisateur </a></li>";
+            }
+            if ($pageAdmin == "vaccinsAdmin"){
+                echo "<li><a href=\"#\" > Ajouter un vaccin </a></li>";
+                echo "<li><a href=\"#\" > Modifier un vaccin </a></li>";
+                echo "<li><a href=\"#\" > Supprimer un vaccin </a></li>";
+            }
+            if ($pageAdmin == "jointureAdmin"){
+                echo "<li><a href=\"#\" > Ajouter une jointure </a></li>";
+                echo "<li><a href=\"#\" > Modifier une jointure </a></li>";
+                echo "<li><a href=\"#\" > Supprimer une jointure </a></li>";
+            }
+            ?>
 
         </ul>
     </div>
@@ -57,7 +76,8 @@
                 ?>
             </ul>
         </nav>
-    </div><?php
+    </div>
+                    <?php
                 }
                 //Si pas logged
                 else { ?>
@@ -68,9 +88,9 @@
           <nav>
             <ul class="titre">
               <li><a href="index.php">Accueil</a></li>
-              <li><a href="#">Qui sommes nous ?</a></li>
+              <li><a href="index.php?page=quiSommesNous">Qui sommes nous ?</a></li>
               <li><a href="index.php?page=listeVaccin">Les vaccins</a></li>
-              <li><a href="index.php?page=vaccinsVoyage">Je part en voyage</a></li>
+             <!-- <li><a href="index.php?page=vaccinsVoyage">Je part en voyage</a></li>-->
             </ul>
             <ul class="log">
               <li><a href="index.php?page=login">Connexion</a></li>

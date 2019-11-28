@@ -18,7 +18,7 @@
         }
 
         .container {
-            max-width: 1500px;
+            max-width: 100%;
             margin: auto;
         }
 
@@ -39,7 +39,7 @@
             border-radius: 10px;
             padding: 10px;
             z-index: 1000;
-            max-width: 200px;
+            max-width: 2000px;
             display: none;
             color: #343434;
         }
@@ -53,8 +53,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
             charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
-    <script src="../assets/js/jQuery-Mapael-2.2.0/js/jquery.mapael.js" charset="utf-8"></script>
-    <script src="../assets/js/jQuery-Mapael-2.2.0/js/maps/world_countries.js" charset="utf-8"></script>
+    <script src="./assets/js/jQuery-Mapael-2.2.0/js/jquery.mapael.js" charset="utf-8"></script>
+    <script src="./assets/js/jQuery-Mapael-2.2.0/js/maps/world_countries.js" charset="utf-8"></script>
 
 
     <script type="text/javascript">

@@ -33,6 +33,7 @@ if (isset($_POST['contact'])) {
             $query->bindValue(':message', ucfirst($message), PDO::PARAM_STR);
             $query->execute();
         }
+    header('Location:index.php');
 } else {
     require_once "formContact.php";
 }

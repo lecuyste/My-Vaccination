@@ -1,5 +1,5 @@
 <div class="triche">
-<h1>Mentions légales</h1>
+</br><h1>Mentions légales</h1>
 <br>
 <h2>Avertissement</h2>
 <br>
@@ -34,7 +34,7 @@
 <br>
 <p>Ce site refuse toute forme de publicité. Il est exclusivement soutenu financièrement par les organisations et sociétés dont les logos et noms apparaissent en base de la page d’accueil du site. Ces sponsors, de manière similaire au soutien à un journal médical, n'ont aucune influence sur le contenu du site et n’en portent pas la responsabilité.
     For juridique
-    La politique rédactionnelle du site est en conformité avec les lois et usages professionnels de la France. </p>
+    La politique rédactionnelle du site est en conformité avec les lois et usages professionnels de la France. </p></br>
 
 </div>
 

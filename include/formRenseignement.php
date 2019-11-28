@@ -6,13 +6,13 @@ if (!isset($taille)) $taille = "";
 if (!isset($sang)) $sang = "";
 
 $id_user = $_SESSION['login']['id'];
-$sql = "SELECT * FROM users where idUSER = $id_user";
+$sql = "SELECT * FROM users WHERE idUSER = $id_user";
 $query = $pdo->prepare($sql);
 $query->execute();
 $profil = $query->fetch();
 
 ?>
-
+<div class="triche">
 <form method="post" action="index.php?page=renseignement">
     <div>
         <label for="birthDate">Date de naissance : </label>
@@ -104,3 +104,4 @@ $profil = $query->fetch();
     </div>
     <input type="hidden" name="rens" />
 </form>
+</div>

@@ -4,9 +4,10 @@ if (!isset($objet)) $objet = "";
 if (!isset($message)) $message = "";
 
 ?>
-
+<div class="container1">
+    <section id=contact>
+        <div class="wrap triche">
         <h1>Contactez-nous</h1>
-        <p>Si vous souhaitez nous poser des questions, veuillez remplir ce formulaire et nous vous aiderons au mieux.</p>
 
         <form method="post" action="index.php?page=contact">
             <div>
@@ -29,4 +30,6 @@ if (!isset($message)) $message = "";
             </div>
             <input type="hidden" name="contact" />
         </form>
-
+</div>
+    </section>
+</div>

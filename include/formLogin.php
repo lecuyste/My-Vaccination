@@ -3,7 +3,9 @@ if (!isset($logMail)){
     $logMail ="";
 }
 ?>
-
+<div class="container">
+    <section id="signup">
+<div class="wrap triche">
 <form method="post" action="index.php?page=login">
     <div>
         <label for="mail">Votre adresse mail: </label>
@@ -20,3 +22,6 @@ if (!isset($logMail)){
     </div>
     <input type="hidden" name="log" />
 </form>
+</div>
+    </section>
+</div>

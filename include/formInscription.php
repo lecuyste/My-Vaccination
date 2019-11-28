@@ -3,6 +3,9 @@ if (!isset($mail)) $mail = "";
 if (!isset($nom)) $nom = "";
 if (!isset($prenom)) $prenom = "";
 ?>
+<div class="container">
+    <section id="signup">
+<div class="wrap triche">
 <form method="post" action="index.php?page=inscription">
     <div>
         <label for="nom">Nom: </label>
@@ -35,3 +38,6 @@ if (!isset($prenom)) $prenom = "";
     </div>
     <input type="hidden" name="inscr" />
 </form>
+</div>
+    </section>
+</div>

@@ -13,6 +13,7 @@ if (!isset($message)) $message = "";
             <div>
                 <label for="mail">Adresse mail</label>
             <input type="email" id="mail" name="mail" placeholder="Votre adresse mail..">
+
             </div>
 
             <div>

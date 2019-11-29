@@ -6,7 +6,7 @@ if (isAdmin()){
 ?>
 
 <footer class="downsite">
-    <p><a href="index.php?page=mentionsLegales">Mentions légales</a> - <a href="index.php?page=contact">Contact</a></p>
+    <p><a href="index.php?page=mentionsLegales">Mentions légales</a> - <a href="index.php?page=cgu">CGU</a> - <a href="index.php?page=contact">Contact</a></p>
     <small>&copy; <?= $actual_year ?> - NFacto Lab</small>
 </footer>
 </main>

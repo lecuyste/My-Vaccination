@@ -23,22 +23,24 @@
             <li><a href="index.php?page=contactAdmin" > Table des messages reçus</a></li>
             <li><a href="index.php?page=logout" > Logout </a></li>
             <?php
-
+            if (!empty($_GET['page'])) {
             $pageAdmin = $_GET['page'];
-            if ($pageAdmin == "userAdmin"){
-                echo "<li><a href=\"index.php?page=ajoutUserAdmin\" > Ajouter un utilisateur </a></li>";
-                echo "<li><a href=\"#\" > Modifier un utilisateur </a></li>";
-                echo "<li><a href=\"#\" > Supprimer un utilisateur </a></li>";
-            }
-            if ($pageAdmin == "vaccinsAdmin"){
-                echo "<li><a href=\"#\" > Ajouter un vaccin </a></li>";
-                echo "<li><a href=\"#\" > Modifier un vaccin </a></li>";
-                echo "<li><a href=\"#\" > Supprimer un vaccin </a></li>";
-            }
-            if ($pageAdmin == "jointureAdmin"){
-                echo "<li><a href=\"#\" > Ajouter une jointure </a></li>";
-                echo "<li><a href=\"#\" > Modifier une jointure </a></li>";
-                echo "<li><a href=\"#\" > Supprimer une jointure </a></li>";
+
+                if ($pageAdmin == "userAdmin") {
+                    echo "<li><a href=\"index.php?page=ajoutUserAdmin\" > Ajouter un utilisateur </a></li>";
+                    echo "<li><a href=\"#\" > Modifier un utilisateur </a></li>";
+                    echo "<li><a href=\"#\" > Supprimer un utilisateur </a></li>";
+                }
+                if ($pageAdmin == "vaccinsAdmin") {
+                    echo "<li><a href=\"#\" > Ajouter un vaccin </a></li>";
+                    echo "<li><a href=\"#\" > Modifier un vaccin </a></li>";
+                    echo "<li><a href=\"#\" > Supprimer un vaccin </a></li>";
+                }
+                if ($pageAdmin == "jointureAdmin") {
+                    echo "<li><a href=\"#\" > Ajouter une jointure </a></li>";
+                    echo "<li><a href=\"#\" > Modifier une jointure </a></li>";
+                    echo "<li><a href=\"#\" > Supprimer une jointure </a></li>";
+                }
             }
             ?>
 

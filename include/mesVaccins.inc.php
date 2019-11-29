@@ -35,8 +35,8 @@ if (!empty($_POST['submitted'])) {
 }
 ?>
 <div class="triche">
-
-    <h1>Mes vaccins</h1>
+</br>
+    <h1>Mes vaccins</h1></br>
     <h2> Ajouter un vaccin </h2>
     <form method="post" action="index.php?page=mesVaccins">
         <label for="selectNomVaccin"></label>
@@ -86,7 +86,7 @@ if (!empty($_POST['submitted'])) {
             echo 'Le vaccin ' . $nom_vacs['nom'] . ' a été administré le : ' . strftime("%d %B %G", strtotime($id_joins['dateInjection'])) . '</br>';
         }
     } ?>
-</div>
+</br></div>
 
 
 
